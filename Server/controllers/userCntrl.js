@@ -1,4 +1,5 @@
-import asyncHandler from 'express-async-handler';
+const asyncHandler = require('express-async-handler');
+
 
 import { prisma } from "../config/prismaCofig.js";
 
