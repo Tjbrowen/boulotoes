@@ -1,40 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>boulotoes</title>
-</head>
-<body>
-  <h1>Data from Server</h1>
-  <ul id="data-list"></ul>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Make a GET request to the server's API endpoint
-      fetch('/api/data')
-        .then(response => {
-          // Check if the response is successful
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          // Parse the JSON response
-          return response.json();
-        })
-        .then(data => {
-          // Process the fetched data
-          const dataList = document.getElementById('data-list');
-          data.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item.name; // Assuming each item has a "name" property
-            dataList.appendChild(li);
-          });
-        })
-        .catch(error => {
-          // Handle errors
-          console.error('Error fetching data:', error);
-        });
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boulotoes</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
