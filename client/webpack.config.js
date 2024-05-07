@@ -6,7 +6,7 @@ const __dirname = dirname(__filename);
 
 export default {
   mode: 'development', 
-  entry: './src/utils/main.jsx', 
+  entry: './src/utils', 
   output: {
     path: resolve(__dirname, 'dist'),
     filename: 'bundle.js',
