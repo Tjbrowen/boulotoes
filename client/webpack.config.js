@@ -4,7 +4,7 @@ export default {
   // other webpack configuration options...
   resolve: {
     alias: {
-      '@prisma/client': path.resolve(__dirname, 'node_modules/@prisma/client'),
+      '@prisma/client': new URL('node_modules/@prisma/client', import.meta.url).pathname,
     },
   },
 };
