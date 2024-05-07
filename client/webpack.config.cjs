@@ -1,10 +1,10 @@
-import { resolve } from 'path';
+const path = require('path');
 
-export default {
+module.exports = {
   mode: 'development', 
   entry: './src/App.jsx', 
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -23,7 +23,7 @@ export default {
   },
   resolve: {
     alias: {
-      '@prisma/client': new URL('node_modules/@prisma/client', import.meta.url).pathname,
+      '@prisma/client': path.resolve(__dirname, 'node_modules/@prisma/client'),
     },
     extensions: ['.js', '.jsx'] 
   },
