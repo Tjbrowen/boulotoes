@@ -1,9 +1,5 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
+import Prisma from '@prisma/client';
+const { PrismaClient } = Prisma;
+export const prisma = new PrismaClient();
 
-const { PrismaClient } = require('@prisma/client');
-
-
-const prisma = new PrismaClient();
-
-export { prisma };
+  
